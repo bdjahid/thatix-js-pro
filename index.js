@@ -1,3 +1,25 @@
+const scrollBtn = document.querySelector("#scroll-btn");
+console.log(scrollBtn);
+
+const refreshBtnVisibility = () => {
+  if (document.documentElement.scrollTop <= 400) {
+    scrollBtn.style.display = "none";
+  } else {
+    scrollBtn.style.display = "block";
+  }
+};
+
+refreshBtnVisibility();
+
+scrollBtn.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+document.addEventListener("scroll", (e) => {
+  refreshBtnVisibility();
+});
+
 const loadData = (foodName = "") => {
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`)
     .then((res) => res.json())
