@@ -15,42 +15,61 @@
   </head>
   <body>
     <header>
-      <nav
-        class="flex items-center justify-between w-11/12 py-2 mx-auto border-b"
-      >
-        <div class="logo w-[100px]"></div>
-        <div class="search">
-          <label class="input">
-            <svg
-              class="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                stroke-width="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </g>
-            </svg>
-            <input
-              id="search-videos"
-              type="search"
-              class="grow"
-              placeholder="Search"
-            />
-          </label>
+      <nav class="">
+        <div class="flex justify-center">
+          <img class="w-56 h-15" src="./images/logo.png" alt="" />
         </div>
-        <div class="logo w-[100px]"></div>
       </nav>
+      <!-- banner -->
+      <div>
+
+  <div
+  class="h-96 hero"
+  style="background-image: url(./images/page-title.jpg);"
+>
+  <div class="hero-overlay"></div>
+  <div class="text-center hero-content text-neutral-content">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+      <p class="mb-5">
+     Search your favorite Recipe 
+      </p>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+      </div>
     </header>
-    <nav id="category" class="flex justify-center gap-5 py-3"></nav>
 
     <main>
+      <div class="my-5 text-center search">
+        <label class="input">
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input
+            id="search-videos"
+            type="search"
+            class="grow"
+            placeholder="Search"
+          />
+        </label>
+      </div>
+      <h1 class="text-4xl font-extrabold text-center">Latest Recipes</h1>
       <section
         id="videos"
         class="grid w-11/12 grid-cols-1 gap-5 py-10 mx-auto md:grid-cols-2 lg:grid-cols-4"
