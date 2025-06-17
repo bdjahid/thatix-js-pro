@@ -1,8 +1,8 @@
-const scrollBtn = document.querySelector("#scroll-btn");
+const scrollBtn = document.getElementById("scroll-btn");
 console.log(scrollBtn);
 
 const refreshBtnVisibility = () => {
-  if (document.documentElement.scrollTop <= 400) {
+  if (document.documentElement.scrollTop <= 350) {
     scrollBtn.style.display = "none";
   } else {
     scrollBtn.style.display = "block";
