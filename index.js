@@ -1,5 +1,5 @@
-const loadData = () => {
-  fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+const loadData = (foodName = "") => {
+  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`)
     .then((res) => res.json())
     .then((data) => displayDataVideos(data.meals))
     .catch((error) => console.error(error));
@@ -10,14 +10,10 @@ const videoDetails = async (id) => {
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const res = await fetch(url);
   const data = await res.json();
-  // console.log(data.meals);
   displayDetails(data.meals);
 };
 
 const displayDetails = (data) => {
-  console.log(data[0]);
-  console.log(data[0].strMealThumb);
-  // console.log(video?.description);
   const detailsContainer = document.getElementById("modalDetails");
   detailsContainer.innerHTML = `
  <figure class="h-[200px] relative">
@@ -37,6 +33,13 @@ const displayDetails = (data) => {
 const displayDataVideos = (data) => {
   const videosContainer = document.getElementById("videos");
   videosContainer.innerHTML = "";
+
+  // if (data.length == 0) {
+  //   videosContainer.innerHTML = `
+  //   <p class="text-red-500">HERE NO CONTENT</p>
+  //   `;
+  //   return;
+  // }
 
   data.forEach((item) => {
     // console.log(item);
@@ -68,5 +71,10 @@ const displayDataVideos = (data) => {
     videosContainer.appendChild(card);
   });
 };
+
+document.getElementById("search-videos").addEventListener("keyup", (e) => {
+  // console.log(e.target.value);
+  loadData(e.target.value);
+});
 
 loadData();
